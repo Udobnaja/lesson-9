@@ -60,9 +60,11 @@ export const emitter = {
             }
         }
         const end = performance.now();
-        console.log(`-----------🔥 🔥 🔥 🔥 🔥 🔥--------------`);
-        console.log(`Emitter: Подписка на ${event} событие ${handler.name} была удалена`);
-        console.log(`Удаление элемента из массива заняло ${(end - start).toFixed(2)} мс`);
+        if (events.length > 0){
+            console.log(`-----------🔥 🔥 🔥 🔥 🔥 🔥--------------`);
+            console.log(`Emitter: Подписка на ${event} событие ${handler.name} была удалена`);
+            console.log(`Удаление элемента из массива заняло ${(end - start).toFixed(2)} мс`);
+        }
     },
     // // handler : function
     emit: function(event) {
@@ -76,6 +78,6 @@ export const emitter = {
         }
         const end = performance.now();
         console.log(`-----------🛠️ 🛠 🛠 🛠 🛠 --------------`);
-        console.log(`Извлечение всех эвентов заняло ${(end - start).toFixed(2)} мс`);
+        console.log(`Вызов всех эвентов занял ${(end - start).toFixed(2)} мс`);
     }
 };
