@@ -1,0 +1,84 @@
+.input{
+  display: inline-flex;
+  align-items: baseline;
+  width: 100%;
+  position: relative;
+
+  &__container{
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    padding: .4375em 0;
+    border-top: .84375em solid transparent;
+    border-bottom: 1px solid red;
+  }
+
+  &__ctrl{
+    font: inherit;
+    background: 0 0;
+    color: red;
+    border: none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    vertical-align: bottom;
+    text-align: inherit;
+  }
+
+  &__autocomplete{
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+    max-height: 256px;
+    background: #fff;
+    color: rgba(0,0,0,.87);
+    width: 100%;
+    top: calc(100% + 2px);
+    overflow: auto;
+    z-index: 2;
+
+    &_show{
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &-item{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      line-height: 36px;
+      height: 36px;
+      padding: 0 16px;
+      text-align: left;
+      text-decoration: none;
+      position: relative;
+      cursor: pointer;
+      outline: 0;
+      flex-direction: row;
+      max-width: 100%;
+      box-sizing: border-box;
+      align-items: center;
+    }
+  }
+
+  &__close{
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    border: 0;
+    border-radius: 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 0;
+    font-size: 8px;
+    background: rgba(0,0,0,.05);
+  }
+}

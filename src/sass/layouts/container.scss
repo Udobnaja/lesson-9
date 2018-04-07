@@ -1,0 +1,12 @@
+.container{
+  display: flex;
+  justify-content: space-between;
+  max-width: 780px;
+  flex-wrap: nowrap;
+  margin: 20px auto;
+
+  &_log{
+    height: 65vh;
+    align-items: flex-end;
+  }
+}

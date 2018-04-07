@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Algorithms - lesson 10</title>
+</head>
+<body>
+    <h1>Algorithms</h1>
+    <div class="container">
+        <div class="input">
+            <div class="input__container">
+                <button class="input__close" id="clear-search">X</button>
+                <input type="text" class="input__ctrl" id="input">
+                <div class="input__autocomplete" id="autocomplete">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <button class="button" id="async-button">Async Button</button>
+        <button class="button" id="off-async-button">Unsubscribe Async Button</button>
+        <button class="button" id="usual-button">Usual Button</button>
+        <button class="button" id="off-usual-button">Unsubscribe Usual Button</button>
+    </div>
+    <div class="container">
+        <!--TODO: предоставить механизм смены кнопок разных алгоритмов-->
+    </div>
+    <div class="container container_log">
+        <div class="log">
+            <div class="log__body" id="log">
+                <p class="log__user">Root: ~ User$</p>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

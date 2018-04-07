@@ -1,0 +1,10 @@
+.button{
+  @extend %small-padding;
+  background-color: #ffdb4d;
+  font-size: 13px;
+  box-shadow: none;
+  border-radius: $border-radius;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
