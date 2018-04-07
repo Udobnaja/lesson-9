@@ -2,7 +2,6 @@ const log = document.getElementById('log'); // лог не должен быть
 
 export class Autocomplete{
 
-
     constructor(node, visibilityClass, limit, data){
         this.node = node;
         this.limit = limit;
@@ -12,8 +11,6 @@ export class Autocomplete{
         this.indexStack = []; //*
         this.filteredData = []; //*
     }
-
-
 
     suggest(value, event){
         if (value.trim().length > 0) {
