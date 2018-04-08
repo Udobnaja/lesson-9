@@ -1,57 +1,71 @@
 export class LinkedList {
 
-    // node
-    // { value : something; next: (item | null)} // это пока на стек больше будет похоже все в конец херачится
-
     constructor(){
-        this._head = null; // type node
-        this._tail = null; // type node
-        this._size = 0;
-    }
-
-    get head() {
-        return this._head;
-    }
-
-    get tail() {
-        return this._tail;
-    }
-
-    get size() {
-        return this._size;
+        this.head = null;
+        this.tail = null;
+        this.size = 0;
     }
 
     createNode(value){
         return{
             value,
-            head: null
+            next: null
         }
     }
 
     add(node){
         const newNode = this.createNode(node);
 
-        // index === size
-
-        if (this._size === 0 || this._tail === null){
-            this._head = newNode;
-            this._tail = newNode;
-        } else { // вставка в конец
-            this._tail.next = newNode;
-            this._tail = newNode;
+        if (this.size === 0 || this.tail === null){
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            this.tail.next = newNode;
+            this.tail = newNode;
         }
 
-        this._size++;
+        this.size++;
     }
 
     forEach(event){
-        // let node = this._head;
-        // while (node !== null) {
-        //     node = node.next;
-        // }
+        let node = this.head;
+
+        while (node) {
+            if (node.value.event === event){
+                node.value.handler();
+            }
+
+            node = node.next;
+        }
     }
 
-    remove(){
-        // что то делаем в условиях наших эвентов  удаляем по value ?
+    remove({event, handler}){
+        if (this.size > 0){
+            let prev = null;
+            let node = this.head;
+
+            while (node) {
+                if (node.value.event === event && node.value.handler === handler){
+                   if (!prev){
+                       this.head = node.next;
+                       if (this.head === this.tail){
+                            this.tail = null;
+                       }
+                   } else if (node === this.tail){
+                       this.tail = prev;
+                       prev.next = node.next;
+                       node.next = null;
+                   } else {
+                       prev.next = node.next;
+                       node.next = null;
+                   }
+
+                   this.size--;
+                   break;
+                }
+                prev = node;
+                node = node.next;
+            }
+        }
     }
 }

@@ -7,25 +7,24 @@ const usualBtn = document.getElementById('usual-button');
 const offAsyncBtn = document.getElementById('off-async-button');
 const offUsualBtn = document.getElementById('off-usual-button');
 
-
-// В условиях времени написать простейшую очередь с затратами на перестройку массива сложность l(n) где n  длина массива
-
-// Затем если успею осущетвить очередь иным способом linkedList
-
 const timerDelay = 200;
 
 const handlers = [
     function handler() {
-        console.log('Handler: Что-то делаем: ');
+        // console.log('Handler: Что-то делаем: ');
     },
     function asyncHandler() {
-        setTimeout(() => {
-            console.log('Handler: Что-то делаем Асинхронно: ');
-        }, timerDelay);
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('Handler: Что-то делаем Асинхронно: ');
+                // console.log('Handler: Что-то делаем Асинхронно: ');
+            }, timerDelay);
+        })
+
     }
 ];
 
-const limit = 100;
+const limit = 2; // видно только на 100000 как различается удаление
 let counter = 0;
 const start = performance.now();
 while (counter < limit){
@@ -34,8 +33,7 @@ while (counter < limit){
     counter++;
 }
 const end = performance.now();
-console.log(`-----------✍️ ✍️ ✍️ ✍️ ✍️ ✍️ ✍️ ✍️--------------`);
-console.log(`Подписка на все эвенты занимает ${(end - start).toFixed(2)} мс`);
+console.log(`✍️ Подписка на все эвенты занимает ${(end - start).toFixed(2)} мс`);
 
 
 usualBtn.addEventListener('click', () => {
