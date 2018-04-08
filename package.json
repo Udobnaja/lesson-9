@@ -8,7 +8,9 @@
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:js": "eslint --ignore-path .gitignore .",
-    "lint:js:fix": "eslint --fix --ignore-path .gitignore ."
+    "lint:js:fix": "eslint --fix --ignore-path .gitignore .",
+    "lint:sass": "stylelint src/**/*.scss --syntax scss",
+    "lint:sass:fix": "stylelint src/**/*.scss --fix --syntax scss"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +26,9 @@
     "eslint-config-yandex": "^1.0.6",
     "gh-pages": "^1.1.0",
     "parcel-bundler": "^1.7.0",
-    "prettier": "^1.11.1"
+    "prettier": "^1.11.1",
+    "stylelint": "^9.1.3",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^0.8.1"
   }
 }

@@ -1,46 +1,48 @@
-.log{
+.log {
   @extend %container-width;
-  background-color: black;
-  color: black;
-  border-radius: $border-radius;
-  line-height: 1.5;
-  height: 400px;
+
   overflow: auto;
   width: 100%;
   max-width: 100%;
-  font-size: 10px;
+  height: 400px;
   letter-spacing: 0.7px;
+  color: black;
+  border-radius: $border-radius;
+  background-color: black;
+  font-size: 10px;
+  line-height: 1.5;
 
-  &__body{
+  &__body {
+    position: relative;
     max-width: 95%;
     margin: 0 auto;
-    position: relative;
-    color: #00ff00;
+    color: #0f0;
   }
 
-  &__user{
+  &__user {
     display: inline-block;
     margin: 5px 0;
 
-    &:last-child{
-      &:after{
-        content: '';
-        display: inline-block;
-        background: #00ff00;
-        height: 12px;
-        width: 5px;
+    &:last-child {
+      &::after {
         position: absolute;
+        display: inline-block;
+        width: 5px;
+        height: 12px;
         margin-left: 1em;
-        animation: blink .4s alternate infinite;
+        content: '';
         cursor: auto;
+        animation: blink 0.4s alternate infinite;
+        background: #0f0;
       }
     }
   }
 
   @keyframes blink {
     from {
-      background: #00ff00;
+      background: #0f0;
     }
+
     to {
       background: #000;
     }
