@@ -5,17 +5,18 @@ const offAsyncBtn = document.getElementById('off-async-button');
 const offUsualBtn = document.getElementById('off-usual-button');
 
 const timerDelay = 200;
-const limit = 2; // видно только на 100000 как различается удаление
+const limit = 5; // видно только на 100000 как различается удаление
 
 const handlers = [
     function handler() {
-        // console.log('Handler: Что-то делаем: ');
+        console.log('Handler: Что-то делаем Синхронно ');
     },
     function asyncHandler() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve('Handler: Что-то делаем Асинхронно: ');
-                // console.log('Handler: Что-то делаем Асинхронно: ');
+                resolve(
+                    console.log('Handler: Что-то делаем Асинхронно: ')
+                );
             }, timerDelay);
         });
 

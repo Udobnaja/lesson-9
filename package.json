@@ -6,6 +6,7 @@
   "scripts": {
     "start": "parcel index.html --no-cache",
     "deploy": "gh-pages -d dist",
+    "build": "parcel build index.js --no-cache",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:js": "eslint --ignore-path .gitignore .",
     "lint:js:fix": "eslint --fix --ignore-path .gitignore .",
