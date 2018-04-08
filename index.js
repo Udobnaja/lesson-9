@@ -1,7 +1,7 @@
 import './src/styles.scss';
-import {emitter} from "./src/modules/emitter/index";
-import {data} from "./db/streets";
-import {suggest, Autocomplete} from "./src/modules/suggest/index";
+import {emitter} from './src/modules/emitter/index';
+import {data} from './db/streets';
+import {suggest, Autocomplete} from './src/modules/suggest/index';
 
 const usualBtn = document.getElementById('usual-button');
 const offAsyncBtn = document.getElementById('off-async-button');
@@ -19,7 +19,7 @@ const handlers = [
                 resolve('Handler: Что-то делаем Асинхронно: ');
                 // console.log('Handler: Что-то делаем Асинхронно: ');
             }, timerDelay);
-        })
+        });
 
     }
 ];
@@ -27,7 +27,7 @@ const handlers = [
 const limit = 2; // видно только на 100000 как различается удаление
 let counter = 0;
 const start = performance.now();
-while (counter < limit){
+while (counter < limit) {
     const index = Math.floor(Math.random() * (handlers.length));
     emitter.on('event', handlers[index]);
     counter++;
@@ -59,12 +59,10 @@ input.onkeyup = function (e) {
 const clear = document.getElementById('clear-search');
 
 clear.addEventListener('click', function () {
-    //TODO: проверь не потекли ли методы в классе, скорее всего да
+    // TODO: проверь не потекли ли методы в классе, скорее всего да
     input.value = '';
     autocomplete.hide();
     input.focus();
 });
-
-
 
 
