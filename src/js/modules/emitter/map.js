@@ -13,7 +13,6 @@ export class EventMaps {
     remove({event, handler}) {
         const events = this.events.get(event);
         if (events && events.length) {
-            console.log(events);
             const index = events.indexOf(handler);
             if (index !== -1) {
                 events.splice(index, 1);
