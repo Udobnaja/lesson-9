@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "parcel index.html --no-cache",
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:js": "eslint --ignore-path .gitignore .",
@@ -19,9 +20,10 @@
     "babel-core": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-runtime": "^6.26.0",
-    "gh-pages": "^1.1.0",
     "eslint": "^4.19.0",
     "eslint-config-yandex": "^1.0.6",
+    "gh-pages": "^1.1.0",
+    "parcel-bundler": "^1.7.0",
     "prettier": "^1.11.1"
   }
 }
